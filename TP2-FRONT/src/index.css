@@ -1,13 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap');
 
-
-:root {
-  --secondaryColor: #000;
-  --textColor: #fff;
-  --easeTransition: 1s ease all;
-  --font: 'oswald';
-  font-family: 'Oswald'
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+:root {
+  --bg-primary: #f7f4ef;
+  --bg-secondary: #f0ebe2;
+  --bg-white: #ffffff;
+  --bg-card-hover: #fdf9f5;
+
+  --accent: #d63a1f;
+  --ink: #1a1a1a;
+  --muted: #999999;
+  --subtle: #bbbbbb;
+  --border: #d8d2c8;
+
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --easeTransition: 1s ease all;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
 
 a {
   text-decoration: none;
