@@ -65,7 +65,7 @@ export function AuthProvider({ children }) {
       return { data: null, error: new Error("Supabase client is not configured") };
     }
 
-    return supabase.auth.signInWithPassword({ usuario, password });
+    return supabase.auth.signInWithPassword({ email, password });
   }
 
   async function signOut() {
