@@ -93,3 +93,24 @@ box-sizing: border-box;
     color: #000;
     border-style: solid;
 }
+
+.navAuth {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navAuth span {
+    font-size: .85rem;
+    max-width: 12rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.categoryTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .2rem;
+    width: 100%;
+}
