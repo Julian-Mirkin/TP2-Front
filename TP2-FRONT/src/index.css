@@ -1,9 +1,10 @@
 
 
 :root {
-  --secondaryColor: #000;
-  --textColor: #fff;
-  --easeTransition: 1s ease all;
+  --mainColor: #fff;
+  --secondaryColor: #cd5926;
+  --textColor: #000;
+  --easeTransition: .5s ease all;
   --font: 'oswald';
   font-family: 'Oswald'
 }

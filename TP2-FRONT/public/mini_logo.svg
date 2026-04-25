@@ -1,0 +1,25 @@
+<svg width="36" height="36" viewBox="0 0 36 36" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>Viena Streetwear</title>
+  <defs>
+    <clipPath id="c"><circle cx="18" cy="18" r="13"/></clipPath>
+  </defs>
+  <circle cx="18" cy="18" r="13" fill="none" stroke="#CC5522" stroke-width="1.4"/>
+  <g clip-path="url(#c)" fill="none" stroke="#CC5522" stroke-width="0.8" opacity="0.9">
+    <ellipse cx="18" cy="18" rx="13" ry="2.8"/>
+    <ellipse cx="18" cy="14.8" rx="12.1" ry="2.4"/>
+    <ellipse cx="18" cy="12.2" rx="9.8" ry="1.8"/>
+    <ellipse cx="18" cy="21.2" rx="12.1" ry="2.4"/>
+    <ellipse cx="18" cy="23.8" rx="9.8" ry="1.8"/>
+  </g>
+  <g clip-path="url(#c)" fill="none" stroke="#CC5522" stroke-width="0.8" opacity="0.9">
+    <ellipse cx="18" cy="18" rx="0.8" ry="13"/>
+    <ellipse cx="18" cy="18" rx="5.5" ry="13"/>
+    <ellipse cx="18" cy="18" rx="9.5" ry="13"/>
+    <ellipse cx="18" cy="18" rx="5.5" ry="13" transform="rotate(55 18 18)"/>
+    <ellipse cx="18" cy="18" rx="9.5" ry="13" transform="rotate(55 18 18)"/>
+    <ellipse cx="18" cy="18" rx="5.5" ry="13" transform="rotate(-55 18 18)"/>
+    <ellipse cx="18" cy="18" rx="9.5" ry="13" transform="rotate(-55 18 18)"/>
+  </g>
+  <path d="M28.5,6.5 L29.6,9.4 L32.5,10.5 L29.6,11.6 L28.5,14.5 L27.4,11.6 L24.5,10.5 L27.4,9.4 Z" fill="#CC5522"/>
+  <path d="M31.5,3.5 L32.1,5.2 L33.8,5.8 L32.1,6.4 L31.5,8.1 L30.9,6.4 L29.2,5.8 L30.9,5.2 Z" fill="#CC5522"/>
+</svg>
