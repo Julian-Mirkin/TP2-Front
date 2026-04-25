@@ -1,0 +1,28 @@
+.errorPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    
+}
+.pageContent {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pageContent h1 {
+    font-size: 5rem;
+    color: var(--textColor);
+    font-family: 'Tangerine';
+
+}
+.storeLayout {
+    padding: 5%;
+    box-sizing: border-box;
+    place-items: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
