@@ -41,6 +41,7 @@ body {
   background-color: var(--bg-primary);
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 a {

@@ -7,7 +7,7 @@ return(
     <>
         <Navbar/>
      <h1>hello world</h1>
-        <Button  text='BEGE'/>
+        <Button  link='/login'text='Log in'/>
     </>
 
 )

@@ -25,3 +25,18 @@ export async function getProducts() {
 		.select('*')
 		.order("nombre", { ascending: true });
 }
+export async function getProduct(name) {
+	if (!supabase) {
+		return {
+			data: null,
+			error: new Error(
+				"Missing Supabase environment variables: VITE_SUPABASE_URL and key"
+			),
+		};
+	}
+
+	return supabase
+		.from("producto")
+		.select('*')
+		.eq('id', name)
+}

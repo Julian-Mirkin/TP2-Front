@@ -10,9 +10,11 @@
     padding-top: 5%;
     height: 100%;
     margin-top: 5rem;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 .pageContent h1 {
     font-size: 5rem;
