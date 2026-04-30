@@ -25,7 +25,7 @@ export async function getProducts() {
 		.select('*')
 		.order("nombre", { ascending: true });
 }
-export async function getProduct(name) {
+export async function getProduct(id) {
 	if (!supabase) {
 		return {
 			data: null,
@@ -38,5 +38,5 @@ export async function getProduct(name) {
 	return supabase
 		.from("producto")
 		.select('*')
-		.eq('id', name)
+		.eq('id', id)
 }
