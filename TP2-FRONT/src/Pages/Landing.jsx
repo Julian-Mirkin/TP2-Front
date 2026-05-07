@@ -1,31 +1,33 @@
-import Button from "../Components/Button";
 import '../Components/hero.css'
 import Navbar from "../Components/NavbarLanding";
+import { Link } from "react-router";
 
 export default function LandingPage() {
-    return (
-        <>
-          <Navbar />
-    
-          <section className="hero">
-            
-            <div className="hero-side">
-              <img className="heroImg" src="/landing_hombre.jpg" alt="Ropa Hombre" />
-              <div className="hero-overlay">
-                <h2 className="hero-label">Hombre</h2>
-                <Button href="/hombre">Ver colección</Button>
-              </div>
-            </div>
+  return (
+    <>
+      <Navbar />
 
-            <div className="hero-side">
-              <img className="heroImg" src="/landing_mujer.jpg" alt="Ropa Mujer" />
-              <div className="hero-overlay">
-                <h2 className="hero-label">Mujer</h2>
-                <Button href="/mujer">Ver colección</Button>
-              </div>
-            </div>
+      <section className="hero">
 
-          </section>
-        </>
-      );
+        <Link to="/hombre" className="hero-side">
+          <img className="heroImg" src="/landing_hombre.jpg" alt="Ropa Hombre" />
+          <div className="hero-overlay">
+            <h2 className="genero">Hombre</h2>
+            <span className="hero-divider" />
+            <span className="hero-cta">ver colección</span>
+          </div>
+        </Link>
+
+        <Link to="/mujer" className="hero-side">
+          <img className="heroImg" src="/landing_mujer.jpg" alt="Ropa Mujer" />
+          <div className="hero-overlay">
+            <h2 className="genero">Mujer</h2>
+            <span className="hero-divider" />
+            <span className="hero-cta">ver colección</span>
+          </div>
+        </Link>
+
+      </section>
+    </>
+  );
 }

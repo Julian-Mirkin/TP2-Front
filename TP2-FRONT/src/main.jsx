@@ -16,7 +16,9 @@ const router = createBrowserRouter([
   {path: '/login', element: <AuthPage mode='login'/>},
   {path: '/register', element: <AuthPage mode='register'/>},
   {path: '/home', element: <ProtectedRoute><HomePage/></ProtectedRoute>},
-  {path: '*', element: <ErrorPage/>}
+  {path: '*', element: <ErrorPage/>},
+  {path: '/hombre', element: <HomePage category='hombre'/>},
+  {path: '/mujer', element: <HomePage category='mujer'/>},
 ])
 
 createRoot(document.getElementById('root')).render(
