@@ -1,13 +1,33 @@
-import Button from "../Components/Button";
+import '../Components/hero.css'
+import Navbar from "../Components/NavbarLanding";
+import { Link } from "react-router";
 
 export default function LandingPage() {
+  return (
+    <>
+      <Navbar />
 
-return(
-    <>   
-     <h1>hello world</h1>
-        <Button text='BEGE'/>
+      <section className="hero">
+
+        <Link to="/hombre" className="hero-side">
+          <img className="heroImg" src="/landing_hombre.jpg" alt="Ropa Hombre" />
+          <div className="hero-overlay">
+            <h2 className="genero">Hombre</h2>
+            <span className="hero-divider" />
+            <span className="hero-cta">ver colección</span>
+          </div>
+        </Link>
+
+        <Link to="/mujer" className="hero-side">
+          <img className="heroImg" src="/landing_mujer.jpg" alt="Ropa Mujer" />
+          <div className="hero-overlay">
+            <h2 className="genero">Mujer</h2>
+            <span className="hero-divider" />
+            <span className="hero-cta">ver colección</span>
+          </div>
+        </Link>
+
+      </section>
     </>
-
-)
-
+  );
 }
