@@ -26,18 +26,23 @@
   --textColor: #000;
   --easeTransition: .5s ease all;
   --font: 'oswald';
+  --titleFont: 'Cormorant Garamond', Georgia, serif;
   font-family: 'Oswald'
 }
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
+body, #root {
+  height: 100%; }
 
 body {
   font-family: var(--font-body);
   background-color: var(--bg-primary);
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 a {

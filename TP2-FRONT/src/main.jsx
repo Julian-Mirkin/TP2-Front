@@ -10,6 +10,7 @@ import ErrorPage from './Pages/ErrorPage';
 import AuthPage from './Pages/Auth';
 import { AuthProvider } from './Context/AuthContext';
 import ProtectedRoute from './Components/ProtectedRoute';
+import ProductPage from './Pages/ProductPage';
 
 const router = createBrowserRouter([
   {path: '/', element: <LandingPage/>},
@@ -19,6 +20,8 @@ const router = createBrowserRouter([
   {path: '*', element: <ErrorPage/>},
   {path: '/hombre', element: <HomePage category='hombre'/>},
   {path: '/mujer', element: <HomePage category='mujer'/>},
+  {path: '/product/:productId', element: <ProductPage/>},
+  {path: '*', element: <ErrorPage/>}
 ])
 
 createRoot(document.getElementById('root')).render(

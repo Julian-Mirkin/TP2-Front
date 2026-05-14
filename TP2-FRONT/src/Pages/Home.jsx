@@ -3,7 +3,7 @@ import StoreLayout from "../Components/StoreLayout";
 import { useEffect, useState } from "react";
 import { getProducts } from "../Scripts/api";
 
-export default function HomePage() {
+export default function HomePage(props) {
     const [elements, setElements] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState("");
@@ -12,7 +12,7 @@ export default function HomePage() {
         let isMounted = true;
 
         async function loadProducts() {
-            const { data, error } = await getProducts();
+            const { data, error } = await getProducts(props.category);
 
             if (!isMounted) {
                 return;

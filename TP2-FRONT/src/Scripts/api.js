@@ -10,7 +10,7 @@ export const supabase =
 		? createClient(supabaseUrl, supabaseKey)
 		: null;
 
-export async function getProducts() {
+export async function getProducts(category) {
 	if (!supabase) {
 		return {
 			data: null,
@@ -23,5 +23,21 @@ export async function getProducts() {
 	return supabase
 		.from("producto")
 		.select('*')
+		.eq('type', category || '*')
 		.order("nombre", { ascending: true });
+}
+export async function getProduct(id) {
+	if (!supabase) {
+		return {
+			data: null,
+			error: new Error(
+				"Missing Supabase environment variables: VITE_SUPABASE_URL and key"
+			),
+		};
+	}
+
+	return supabase
+		.from("producto")
+		.select('*')
+		.eq('id', id)
 }
