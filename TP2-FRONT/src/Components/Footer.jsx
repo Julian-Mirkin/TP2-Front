@@ -24,7 +24,7 @@ export default function Footer() {
           <h3>Síguenos</h3>
           <div className="social-icons">
             <a href="https://www.instagram.com/tic_virgo/" target="_blank" rel="noreferrer">Instagram</a>
-            <a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a>
+            <a href="https://facebook.com/JavierMileiEconomista/" target="_blank" rel="noreferrer">Facebook</a>
             <a href="https://x.com/TrumpDailyPosts/" target="_blank" rel="noreferrer">X</a>
           </div>
         </div>
