@@ -26,6 +26,7 @@
   --textColor: #000;
   --easeTransition: .5s ease all;
   --font: 'oswald';
+  --titleFont: 'Cormorant Garamond', Georgia, serif;
   font-family: 'Oswald'
 }
 
