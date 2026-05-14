@@ -1,4 +1,4 @@
-import '../Components/hero.css'
+import '../Components/Landing.css'
 import Navbar from "../Components/NavbarLanding";
 import { Link } from "react-router";
 
