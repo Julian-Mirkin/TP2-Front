@@ -1,11 +1,11 @@
 import '../Components/Landing.css'
 import Navbar from "../Components/NavbarLanding";
 import { Link } from "react-router";
+import Footer from '../Components/Footer';
 
 export default function LandingPage() {
   return (
-    <>
-      <Navbar />
+    <><Navbar />
 
       <section className="hero">
 
@@ -14,7 +14,7 @@ export default function LandingPage() {
           <div className="hero-overlay">
             <h2 className="genero">Hombre</h2>
             <span className="hero-divider" />
-            <span className="hero-cta">ver colección</span>
+            <span className="coleccion">ver colección</span>
           </div>
         </Link>
 
@@ -23,11 +23,12 @@ export default function LandingPage() {
           <div className="hero-overlay">
             <h2 className="genero">Mujer</h2>
             <span className="hero-divider" />
-            <span className="hero-cta">ver colección</span>
+            <span className="coleccion">ver colección</span>
           </div>
         </Link>
 
       </section>
+      <Footer />
     </>
   );
 }
