@@ -3,7 +3,7 @@ import Logo from "./Logo";
 import { useAuth } from "../Context/AuthContext";
 import { useNavigate } from "react-router";
 
-export default function NavBar(props) {
+export default function NavBar() {
     const { user, signOut } = useAuth();
     const navigate = useNavigate();
 

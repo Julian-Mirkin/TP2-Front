@@ -8,7 +8,7 @@ export default function Category(props) {
 
     return(
         <div className="category" onMouseEnter={()=>setSelected(true)} onMouseLeave={()=>setSelected(false)}>
-           <div className="categoryTitle"> <p>{props.name}</p><span className='material-symbols-outlined'>arrow_drop_{selected?'up':'down'}</span></div>
+           <Link to={`/${props.name}`}><div className="categoryTitle"> <p>{props.name}</p><span className='material-symbols-outlined'>arrow_drop_{selected?'up':'down'}</span></div></Link>
             {selected && <div className="optionBox">
                 {options}
             </div>}

@@ -21,6 +21,8 @@ const router = createBrowserRouter([
   {path: '/hombre', element: <HomePage category='hombre'/>},
   {path: '/mujer', element: <HomePage category='mujer'/>},
   {path: '/product/:productId', element: <ProductPage/>},
+  {path: '/accesorios', element: <HomePage category='accesorio'/>},
+  {path: '/niños', element: <HomePage category='ninio'/>},
   {path: '*', element: <ErrorPage/>}
 ])
 

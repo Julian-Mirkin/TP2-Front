@@ -37,6 +37,8 @@ flex-wrap: wrap;
 
 .category {
     height: 100%;
+    min-height: fit-content;
+    box-sizing: border-box;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -48,7 +50,8 @@ flex-wrap: wrap;
 }
 .optionBox {
     position: absolute;
-    top: 2rem;
+    box-sizing: border-box;
+    top: 1.5rem;
     width: 10rem;
     display: flex;
     flex-direction: column;
@@ -74,27 +77,38 @@ flex-wrap: wrap;
     align-items: center;
     justify-content: flex-end;
     width: 15rem;
-    min-height: 15rem;
+    height: 27rem;
     outline: 2px solid #000;
     outline-offset: -.5rem;
     gap: .5rem;
     box-shadow: 0px 5px 10px #0000006b;
     padding: 1rem;
 }
-.storeElement h2 {
+.elementContainer {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.storeElementTxt {
+    width: 100%;
+}
+.storeElementTxt h2 {
     font-size: 1.2rem;
     color: var(--secondaryColor);
     font-weight: bold;
 }
 .storeElement img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     border-radius: 1rem;
 }
-.storeElement hr {
+.storeElementTxt hr {
     width: 100%;
     color: #000;
+    opacity: 0.9;
     border-style: solid;
+    border-width: 0.5px;
 }
 
 .navAuth {
@@ -114,6 +128,7 @@ flex-wrap: wrap;
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100%;
     gap: .2rem;
     width: 100%;
 }

@@ -5,13 +5,15 @@ import { getProducts } from "../Scripts/api";
 
 export default function HomePage(props) {
     const [elements, setElements] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState();
     const [errorMessage, setErrorMessage] = useState("");
 
     useEffect(() => {
         let isMounted = true;
+        
 
         async function loadProducts() {
+            setIsLoading(true)
             const { data, error } = await getProducts(props.category);
 
             if (!isMounted) {
@@ -34,7 +36,7 @@ export default function HomePage(props) {
         return () => {
             isMounted = false;
         };
-    }, []);
+    }, [props.category]);
     console.log(elements)
     return(
         <>
