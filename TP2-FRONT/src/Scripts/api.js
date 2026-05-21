@@ -10,7 +10,7 @@ export const supabase =
 		? createClient(supabaseUrl, supabaseKey)
 		: null;
 
-export async function getProducts(category) {
+export async function getProducts(category,prenda) {
 	if (!supabase) {
 		return {
 			data: null,
@@ -20,11 +20,17 @@ export async function getProducts(category) {
 		};
 	}
 
-	return supabase
+	let query = supabase
 		.from("producto")
 		.select('*')
-		.eq('type', category || '*')
 		.order("nombre", { ascending: true });
+		if(category) {
+			query = query.eq('type', category)
+		}
+		if(prenda) {
+			query = query.eq('prenda', prenda)
+		}
+		return(query)
 }
 export async function getProduct(id) {
 	if (!supabase) {

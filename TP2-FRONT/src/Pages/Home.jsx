@@ -2,19 +2,20 @@ import NavBar from "../Components/NavBar";
 import StoreLayout from "../Components/StoreLayout";
 import { useEffect, useState } from "react";
 import { getProducts } from "../Scripts/api";
+import { useParams } from "react-router";
 
 export default function HomePage(props) {
     const [elements, setElements] = useState([]);
     const [isLoading, setIsLoading] = useState();
     const [errorMessage, setErrorMessage] = useState("");
-
+    const params = useParams()
     useEffect(() => {
         let isMounted = true;
         
 
         async function loadProducts() {
             setIsLoading(true)
-            const { data, error } = await getProducts(props.category);
+            const { data, error } = await getProducts(props.category, params.type);
 
             if (!isMounted) {
                 return;
@@ -36,7 +37,7 @@ export default function HomePage(props) {
         return () => {
             isMounted = false;
         };
-    }, [props.category]);
+    }, [props.category, params.type]);  
     console.log(elements)
     return(
         <>
