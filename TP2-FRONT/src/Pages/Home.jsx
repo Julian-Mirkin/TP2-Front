@@ -48,7 +48,7 @@ export default function HomePage(props) {
             {!isLoading && errorMessage && (
                 <p>No se pudo cargar desde Supabase: {errorMessage}</p>
             )}
-            <StoreLayout elements={elements}/>
+            {elements.length>0? <StoreLayout elements={elements}/> : <h2>Ningun elemento encontrado...</h2>}
         </div>
         </>
     )

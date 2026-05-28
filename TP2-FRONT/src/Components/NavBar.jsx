@@ -25,7 +25,7 @@ export default function NavBar() {
             <Category name='Home'/>
             <Category name='Hombre' options={hombresOptions}/>
             <Category name='Mujer' options={mujeresOptions}/>
-            <Category name='Niños' options={ninosOptions}/>
+            <Category name='Niños' link='ninios' options={ninosOptions}/>
             <Category name='Accesorios' options={accesoriosOptions}/>
             <div className="navAuth">
                 <span>{user?.email}</span>

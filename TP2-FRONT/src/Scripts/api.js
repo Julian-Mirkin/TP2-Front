@@ -47,3 +47,20 @@ export async function getProduct(id) {
 		.select('*')
 		.eq('id', id)
 }
+
+export async function postOrder(user_id, product_id) {
+
+	if (!supabase) {
+		return {
+			data: null,
+			error: new Error(
+				"Missing Supabase environment variables: VITE_SUPABASE_URL and key"
+			),
+		};
+	}
+
+	return supabase
+		.from("order")
+		.insert({user_id: user_id, product_id: product_id})
+		.select()
+}
