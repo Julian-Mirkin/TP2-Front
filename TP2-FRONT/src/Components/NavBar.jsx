@@ -2,6 +2,7 @@ import Category from "./Category";
 import Logo from "./Logo";
 import { useAuth } from "../Context/AuthContext";
 import { useNavigate } from "react-router";
+import './NavBar.css';
 
 export default function NavBar(props) {
     const { user, signOut } = useAuth();
