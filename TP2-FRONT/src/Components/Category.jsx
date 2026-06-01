@@ -2,14 +2,14 @@ import { Link } from "react-router";
 import { useState } from "react";
 export default function Category(props) {
     const [selected, setSelected] = useState(false)
-   const options = props.options.map((o)=> <Link className="option" key={o.link} to={o.link}>
+   const options = props.options?.map((o)=> <Link className="option" key={o.link} to={o.link}>
             {o.text}
         </Link>)
 
     return(
         <div className="category" onMouseEnter={()=>setSelected(true)} onMouseLeave={()=>setSelected(false)}>
-           <Link to={`/${props.name}`}><div className="categoryTitle"> <p>{props.name}</p><span className='material-symbols-outlined'>arrow_drop_{selected?'up':'down'}</span></div></Link>
-            {selected && <div className="optionBox">
+           <Link to={`/${props.link || props.name}`}><div className="categoryTitle"> <p>{props.name}</p>{props.options && <span className='material-symbols-outlined'>arrow_drop_{selected?'up':'down'}</span>}</div></Link>
+            {selected && props.options && <div className="optionBox">
                 {options}
             </div>}
         </div>

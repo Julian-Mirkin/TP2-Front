@@ -18,11 +18,11 @@ const router = createBrowserRouter([
   {path: '/register', element: <AuthPage mode='register'/>},
   {path: '/home', element: <ProtectedRoute><HomePage/></ProtectedRoute>},
   {path: '*', element: <ErrorPage/>},
-  {path: '/hombre', element: <HomePage category='hombre'/>},
-  {path: '/mujer', element: <HomePage category='mujer'/>},
-  {path: '/product/:productId', element: <ProductPage/>},
-  {path: '/accesorios', element: <HomePage category='accesorio'/>},
-  {path: '/niños', element: <HomePage category='ninio'/>},
+  {path: '/hombre/:type?', element: <ProtectedRoute><HomePage category='hombre'/></ProtectedRoute>},
+  {path: '/mujer/:type?', element: <ProtectedRoute><HomePage category='mujer'/></ProtectedRoute>},
+  {path: '/product/:productId', element: <ProtectedRoute><ProductPage/></ProtectedRoute>},
+  {path: '/accesorios/:type?', element: <ProtectedRoute><HomePage category='accesorio'/></ProtectedRoute>},
+  {path: '/ninios/:type?', element: <ProtectedRoute><HomePage category='ninio'/></ProtectedRoute>},
   {path: '*', element: <ErrorPage/>}
 ])
 

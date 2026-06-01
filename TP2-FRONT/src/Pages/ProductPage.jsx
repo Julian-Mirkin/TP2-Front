@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
-import { getProduct } from "../Scripts/api";
+import { getProduct, postOrder } from "../Scripts/api";
 import { useParams } from "react-router";
 import NavBar from "../Components/NavBar";
+import Button from '../Components/Button.jsx'
+import { useAuth } from "../Context/AuthContext.jsx";
 
 export default function ProductPage(props) {
     const params = useParams()
     const [productData, setProductData] = useState(null)
+    const{ user} = useAuth()
 
     useEffect(()=>{
 
@@ -22,6 +25,13 @@ export default function ProductPage(props) {
 
     },[])
 
+    async function createOrder() {
+        console.log('order started')
+        let res = await postOrder(user.id, productData.id)
+            console.log(res)
+            
+    }
+
     return(
     <>
         <NavBar/>
@@ -30,9 +40,12 @@ export default function ProductPage(props) {
                 <>
                     <img src={productData.foto} alt={productData.nombre} className="productImage"/>
                     <div className="productInfo">
+                        <div>
                         <h1>{productData.nombre}</h1>
                         <p>{productData.descripcion}</p>
                         <p>Precio: ${productData.precio}</p>
+                        </div>
+                        <Button disabled={productData.cantidad<0} text={productData.cantidad>0? 'Comprar' : 'No disponible'} onClick={createOrder}/>
                     </div>
                 </>
             ) : (

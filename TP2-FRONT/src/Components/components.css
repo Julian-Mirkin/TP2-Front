@@ -136,12 +136,3 @@ flex-wrap: wrap;
     gap: .2rem;
     width: 100%;
 }
-.productPageContent {
-    width: 100%;
-    margin-top: 5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    gap: 2rem;
-    padding: 2rem;
-}
