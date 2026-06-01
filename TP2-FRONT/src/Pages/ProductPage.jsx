@@ -4,11 +4,13 @@ import { useParams } from "react-router";
 import NavBar from "../Components/NavBar";
 import Button from '../Components/Button.jsx'
 import { useAuth } from "../Context/AuthContext.jsx";
+import { useNavigate } from "react-router";
 
-export default function ProductPage(props) {
+export default function ProductPage() {
     const params = useParams()
     const [productData, setProductData] = useState(null)
     const{ user} = useAuth()
+    const nav = useNavigate()
 
     useEffect(()=>{
 
@@ -27,8 +29,14 @@ export default function ProductPage(props) {
 
     async function createOrder() {
         console.log('order started')
+
         let res = await postOrder(user.id, productData.id)
             console.log(res)
+            if(res.error) {
+                alert('Error al crear el pedido: ' + res.error.message)
+            }
+            else { nav('/cart') }
+
             
     }
 

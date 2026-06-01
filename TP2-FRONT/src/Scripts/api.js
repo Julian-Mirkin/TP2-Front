@@ -64,3 +64,38 @@ export async function postOrder(user_id, product_id) {
 		.insert({user_id: user_id, product_id: product_id})
 		.select()
 }
+
+export async function deleteOrder(orderId) {
+
+	if (!supabase) {
+		return {
+			data: null,
+			error: new Error(
+				"Missing Supabase environment variables: VITE_SUPABASE_URL and key"
+			),
+		};
+	}
+
+	return supabase
+		.from("order")
+		.delete()
+		.eq('id', orderId)
+}
+
+export async function getOrders(userId) {
+
+	if (!supabase) {
+		return {
+			data: null,
+			error: new Error(
+				"Missing Supabase environment variables: VITE_SUPABASE_URL and key"
+			),
+		};
+	}
+
+	return supabase
+		.from("order")
+		.select('id, state, producto (id, nombre, precio, foto)')
+		.eq('user_id', userId)
+}
+
