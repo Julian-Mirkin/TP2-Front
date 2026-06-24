@@ -21,8 +21,11 @@ jobs:
       - name: 1. LINT (Validar formato)
         run: npm run lint
 
-      - name: 2. TESTS (Unitarios y E2E)
+      - name: 2. TESTS (Unitarios )
         run: npm test
+
+      - name: 2.1. TESTS (E2E)
+        run: npm run e2e
 
       - name: 3. BUILD (Construir app)
         run: npm run build

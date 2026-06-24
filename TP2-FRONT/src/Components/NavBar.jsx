@@ -28,7 +28,7 @@ export default function NavBar() {
             <Category name='Niños' link='ninios' options={ninosOptions}/>
             <Category name='Accesorios' options={accesoriosOptions}/>
             <div className="navAuth">
-                <span>{user?.email}</span>
+                <span onClick={() => navigate('/cart')}>{user?.email}</span>
                 <button className="defaultButton" onClick={handleLogout}>Salir</button>
             </div>
         </div>
