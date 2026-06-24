@@ -11,13 +11,20 @@ import AuthPage from './Pages/Auth';
 import { AuthProvider } from './Context/AuthContext';
 import ProtectedRoute from './Components/ProtectedRoute';
 import ProductPage from './Pages/ProductPage';
+import OrdersPage from './Pages/OrdersPage';
 
 const router = createBrowserRouter([
   {path: '/', element: <LandingPage/>},
   {path: '/login', element: <AuthPage mode='login'/>},
   {path: '/register', element: <AuthPage mode='register'/>},
   {path: '/home', element: <ProtectedRoute><HomePage/></ProtectedRoute>},
-  {path: '/product/:nombre', element: <ProductPage/>},
+  {path: '/cart', element: <ProtectedRoute><OrdersPage/></ProtectedRoute>},
+  {path: '*', element: <ErrorPage/>},
+  {path: '/hombre/:type?', element: <ProtectedRoute><HomePage category='hombre'/></ProtectedRoute>},
+  {path: '/mujer/:type?', element: <ProtectedRoute><HomePage category='mujer'/></ProtectedRoute>},
+  {path: '/product/:productId', element: <ProtectedRoute><ProductPage/></ProtectedRoute>},
+  {path: '/accesorios/:type?', element: <ProtectedRoute><HomePage category='accesorio'/></ProtectedRoute>},
+  {path: '/ninios/:type?', element: <ProtectedRoute><HomePage category='ninio'/></ProtectedRoute>},
   {path: '*', element: <ErrorPage/>}
 ])
 

@@ -1,0 +1,40 @@
+name: Pipeline de Calidad
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: 1. LINT (Validar formato)
+        run: npm run lint
+
+      - name: 2. TESTS (Unitarios )
+        run: npm test
+
+      - name: 2.1. TESTS (E2E)
+        run: npm run e2e
+
+      - name: 3. BUILD (Construir app)
+        run: npm run build
+
+      - name: 4. DEPLOY (A Vercel)
+        if: success()
+        uses: amondnet/vercel-action@v20
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: '--prod'

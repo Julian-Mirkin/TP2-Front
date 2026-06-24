@@ -19,7 +19,7 @@
 .pageContent h1 {
     font-size: 5rem;
     color: var(--textColor);
-    font-family: 'Tangerine';
+    font-family: 'Cormorant Garamond', Georgia, serif;
 
 }
 .storeLayout {
@@ -81,4 +81,32 @@
 .authSwitch {
     display: flex;
     gap: .5rem;
+}
+
+.productPageContent {
+    width: 100%;
+    height: 100%;
+    margin-top: 10rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    gap: 2rem;
+    padding: 3rem;
+}
+.productPageContent img {
+
+    width: 25%;
+    box-shadow: #00000070 0px 0px 16px;
+    border-radius: 15px;
+    transition: var(--easeTransition);
+}
+.productPageContent img:hover {
+
+    transform: scale(1.01)
+}
+.productInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
 }

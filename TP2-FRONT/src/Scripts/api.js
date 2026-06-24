@@ -10,7 +10,7 @@ export const supabase =
 		? createClient(supabaseUrl, supabaseKey)
 		: null;
 
-export async function getProducts() {
+export async function getProducts(category,prenda) {
 	if (!supabase) {
 		return {
 			data: null,
@@ -20,12 +20,19 @@ export async function getProducts() {
 		};
 	}
 
-	return supabase
+	let query = supabase
 		.from("producto")
 		.select('*')
 		.order("nombre", { ascending: true });
+		if(category) {
+			query = query.eq('type', category)
+		}
+		if(prenda) {
+			query = query.eq('prenda', prenda)
+		}
+		return(query)
 }
-export async function getProduct(name) {
+export async function getProduct(id) {
 	if (!supabase) {
 		return {
 			data: null,
@@ -38,5 +45,57 @@ export async function getProduct(name) {
 	return supabase
 		.from("producto")
 		.select('*')
-		.eq('id', name)
+		.eq('id', id)
 }
+
+export async function postOrder(user_id, product_id) {
+
+	if (!supabase) {
+		return {
+			data: null,
+			error: new Error(
+				"Missing Supabase environment variables: VITE_SUPABASE_URL and key"
+			),
+		};
+	}
+
+	return supabase
+		.from("order")
+		.insert({user_id: user_id, product_id: product_id})
+		.select()
+}
+
+export async function deleteOrder(orderId) {
+
+	if (!supabase) {
+		return {
+			data: null,
+			error: new Error(
+				"Missing Supabase environment variables: VITE_SUPABASE_URL and key"
+			),
+		};
+	}
+
+	return supabase
+		.from("order")
+		.delete()
+		.eq('id', orderId)
+}
+
+export async function getOrders(userId) {
+
+	if (!supabase) {
+		return {
+			data: null,
+			error: new Error(
+				"Missing Supabase environment variables: VITE_SUPABASE_URL and key"
+			),
+		};
+	}
+
+	return supabase
+		.from("order")
+		.select('id, state, producto (id, nombre, precio, foto)')
+		.eq('user_id', userId)
+}
+
